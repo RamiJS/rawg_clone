@@ -1,3 +1,4 @@
+import Games from "./Components/Games";
 import { Navbar } from "./Components/Navbar";
 import Sidebar from "./Components/Sidebar";
 const App = () => {
@@ -15,7 +16,7 @@ const App = () => {
 
       {/* Main content */}
       <div className="col-span-10 py-4 px-6">
-        <p>Welcome to my web app!</p>
+        <Games />
       </div>
     </div>
   );
