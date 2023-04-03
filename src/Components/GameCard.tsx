@@ -1,4 +1,5 @@
 import { GameProps } from "../Hooks/useGames";
+import getCroppedImageUrl from "../services/image-url";
 import PlatformList from "./PlatformList";
 interface Props {
   game: GameProps;
@@ -9,7 +10,7 @@ const GameCard = ({ game }: Props) => {
     <div className="flex flex-col bg-secondary rounded-2xl">
       <img
         className="h-52 lg:h-36 xl:h-52 2xl:h-64 object-cover"
-        src={game.background_image}
+        src={getCroppedImageUrl(game.background_image)}
         alt=""
       />
       <div className="p-4">
