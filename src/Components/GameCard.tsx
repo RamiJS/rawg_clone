@@ -1,4 +1,5 @@
 import { GameProps } from "../Hooks/useGames";
+import PlatformList from "./PlatformList";
 interface Props {
   game: GameProps;
 }
@@ -13,7 +14,9 @@ const GameCard = ({ game }: Props) => {
       />
       <div className="p-4">
         <div className="flex flex-row justify-between">
-          <p>logo</p>
+          <PlatformList
+            platforms={game.parent_platforms.map((p) => p.platform)}
+          />
           <p
             className={`px-[6px] py-[3px] font-bold rounded-md text-[12px] border ${
               game.metacritic >= 90
