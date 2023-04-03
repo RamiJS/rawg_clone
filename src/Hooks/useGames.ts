@@ -24,19 +24,24 @@ export interface GamesResponseData {
 const useGames = () => {
     const [games, setGames] = useState<GameProps[]>([]); // array of games
     const [error, setError] = useState(""); // error message
+    const [isLoading, setLoading] = useState(false); // loading state (true or false
     
     useEffect(() => {
-        const controller = new AbortController();
+      const controller = new AbortController();
+      setLoading(true);
       apiClient
         .get<GamesResponseData>("/games", {signal: controller.signal})
-        .then((res) => setGames(res.data.results))
+        .then((res) => {
+          setGames(res.data.results);
+          setLoading(false);
+        })
         .catch((err) => {
             if(err instanceof CanceledError) return;
             setError(err.message)});
         
         return () => controller.abort();
     }, []);
-    return { games, error}
+    return { games, error, isLoading}
 }
 
 export default useGames;
