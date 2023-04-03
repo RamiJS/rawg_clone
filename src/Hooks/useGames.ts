@@ -5,6 +5,9 @@ import { CanceledError } from "axios";
 export interface GameProps {
     id: number; // id of the game
     name: string; // name of the game
+    background_image: string; // background image of the game
+    platforms: { platform: { name: string } }[]; // array of platforms
+    metacritic: number; // rating of the game
   }
   
 export interface GamesResponseData {
