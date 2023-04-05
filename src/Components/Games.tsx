@@ -3,7 +3,7 @@ import GameCard from "./GameCard";
 import GameCardShrimming from "./GameCardShrimming";
 
 const Games = () => {
-  const { games, error, isLoading } = useGames();
+  const { data, error, isLoading } = useGames();
   const shrimmerLoading = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   return (
     <>
@@ -13,7 +13,7 @@ const Games = () => {
             <GameCardShrimming key={shrimmer} />
           ))}
         {error && <p>{error}</p>}
-        {games.map((game) => (
+        {data.map((game) => (
           <GameCard key={game.id} game={game}></GameCard>
         ))}
       </div>
