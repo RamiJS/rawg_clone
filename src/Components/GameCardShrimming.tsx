@@ -1,5 +1,3 @@
-import React from "react";
-
 const GameCardShrimming = () => {
   return (
     <div className="flex flex-col gap-2 bg-secondary rounded-2xl">

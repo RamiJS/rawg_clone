@@ -15,7 +15,7 @@ const App = () => {
       </div>
 
       {/* Main content */}
-      <div className="col-span-10 py-4 px-6">
+      <div className="col-span-12 lg:col-span-10 py-4 px-6">
         <Games />
       </div>
     </div>

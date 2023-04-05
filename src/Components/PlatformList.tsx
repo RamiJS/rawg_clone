@@ -9,7 +9,7 @@ import {
 } from "react-icons/bs";
 import { FiMonitor } from "react-icons/fi";
 import { FaLinux } from "react-icons/fa";
-import { IconBase, IconType } from "react-icons/lib";
+import { IconType } from "react-icons/lib";
 
 interface Props {
   platforms: Platform[];
@@ -23,7 +23,7 @@ const iconList: { [key: string]: IconType } = {
   mac: BsApple,
   linux: FaLinux,
   android: BsAndroid2,
-  ios: BsAndroid2,
+  ios: BsApple,
   web: FiMonitor,
 };
 
