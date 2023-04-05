@@ -1,9 +1,15 @@
-import useGenres from "../Hooks/useGenres";
+import useGenres, { Genre } from "../Hooks/useGenres";
 
-const GenreList = () => {
+interface Props {
+  selectedGenre: Genre | null;
+  onSelectGenre: (genre: Genre) => void;
+}
+
+const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
   const { data, error, isLoading } = useGenres();
   return (
     <>
+      {error && <p>{error}</p>}
       {isLoading && (
         <div
           role="status"
@@ -31,6 +37,7 @@ const GenreList = () => {
       <ul className="">
         {data.map((genre) => (
           <li
+            onClick={() => onSelectGenre(genre)}
             key={genre.id}
             className="flex flex-row gap-2 py-2 items-center cursor-pointer"
           >
