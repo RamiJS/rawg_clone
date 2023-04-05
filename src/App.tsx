@@ -10,7 +10,7 @@ const App = () => {
       </div>
 
       {/* Sidebar */}
-      <div className="col-span-2 py-4 px-6 lg:block hidden">
+      <div className="col-span-2 py-4 lg:block hidden">
         <Sidebar />
       </div>
 
