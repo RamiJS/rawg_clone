@@ -1,6 +1,9 @@
 import { FiChevronDown } from "react-icons/fi";
+import usePlatforms from "../Hooks/usePlatforms";
 
 const PlatformSelector = () => {
+  const { data, error } = usePlatforms();
+  if (error) return null;
   return (
     <div className="w-36 my-6 dropdown dropdown-bottom">
       <label
@@ -18,9 +21,15 @@ const PlatformSelector = () => {
         <li className="text-gray-400 pointer-events-none">
           <a>Platforms</a>
         </li>
-        <li>
-          <a>Item 2</a>
-        </li>
+        {data.map((platform) => (
+          <li
+            key={platform.id}
+            value={platform.id}
+            className="hover:bg-gray-200 rounded-lg px-4 cursor-pointer"
+          >
+            {platform.name}
+          </li>
+        ))}
       </ul>
     </div>
   );
