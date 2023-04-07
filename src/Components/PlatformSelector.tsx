@@ -1,7 +1,13 @@
 import { FiChevronDown } from "react-icons/fi";
 import usePlatforms from "../Hooks/usePlatforms";
+import { Platform } from "../Hooks/useGames";
 
-const PlatformSelector = () => {
+interface Props {
+  onSelectPlatform: (platform: Platform) => void;
+  selectedPlatform: Platform | null;
+}
+
+const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
   const { data, error } = usePlatforms();
   if (error) return null;
   return (
@@ -10,7 +16,11 @@ const PlatformSelector = () => {
         tabIndex={0}
         className="btn bg-selector border-none capitalize flex flex-row justify-between"
       >
-        <span>Platforms</span>
+        {selectedPlatform ? (
+          <span>{selectedPlatform.name}</span>
+        ) : (
+          <span>Platforms</span>
+        )}
         <FiChevronDown />
       </label>
 
@@ -18,13 +28,11 @@ const PlatformSelector = () => {
         tabIndex={0}
         className="dropdown-content menu p-2 shadow rounded-box w-52 bg-white text-primary capitalize"
       >
-        <li className="text-gray-400 pointer-events-none">
-          <a>Platforms</a>
-        </li>
+        <li className="text-gray-400 pointer-events-none">Platforms</li>
         {data.map((platform) => (
           <li
             key={platform.id}
-            value={platform.id}
+            onClick={() => onSelectPlatform(platform)}
             className="hover:bg-gray-200 rounded-lg px-4 cursor-pointer"
           >
             {platform.name}
