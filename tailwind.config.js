@@ -9,8 +9,12 @@ export default {
       colors: {
         primary: "#151515",
         secondary: "#202020",
+        selector: "#262626",
       },
     },
   },
-  plugins: [],
+  daisyui: {
+    themes: false,
+ },
+  plugins: [require("daisyui")],
 }
