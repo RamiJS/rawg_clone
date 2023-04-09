@@ -5,6 +5,7 @@ import Sidebar from "./Components/Sidebar";
 import { Genre } from "./Hooks/useGenres";
 import PlatformSelector from "./Components/PlatformSelector";
 import { Platform } from "./Hooks/useGames";
+import SortSelector from "./Components/SortSelector";
 
 export interface GameQuery {
   genre: Genre | null;
@@ -33,12 +34,15 @@ const App = () => {
 
       {/* Main content */}
       <div className="col-span-12 lg:col-span-10 py-4 px-6">
-        <PlatformSelector
-          selectedPlatform={gameQuery.platform}
-          onSelectPlatform={(platform) =>
-            setGameQuery({ ...gameQuery, platform })
-          }
-        />
+        <div className="flex flex-row gap-3">
+          <SortSelector />
+          <PlatformSelector
+            selectedPlatform={gameQuery.platform}
+            onSelectPlatform={(platform) =>
+              setGameQuery({ ...gameQuery, platform })
+            }
+          />
+        </div>
         <Games gameQuery={gameQuery} />
       </div>
     </div>
