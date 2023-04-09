@@ -1,15 +1,14 @@
-import useGames, { Platform } from "../Hooks/useGames";
-import { Genre } from "../Hooks/useGenres";
+import { GameQuery } from "../App";
+import useGames from "../Hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardShrimming from "./GameCardShrimming";
 
 interface Props {
-  selectedGenre: Genre | null;
-  selectedPlatform: Platform | null;
+  gameQuery: GameQuery;
 }
 
-const Games = ({ selectedGenre, selectedPlatform }: Props) => {
-  const { data, error, isLoading } = useGames(selectedGenre, selectedPlatform);
+const Games = ({ gameQuery }: Props) => {
+  const { data, error, isLoading } = useGames(gameQuery);
   const shrimmerLoading = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   return (
     <>

@@ -28,12 +28,14 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
         tabIndex={0}
         className="dropdown-content menu p-2 shadow rounded-box w-52 bg-white text-primary capitalize"
       >
-        <li className="text-gray-400 pointer-events-none">Platforms</li>
+        <li className="text-gray-400 pointer-events-none py-2 px-4">
+          Platforms
+        </li>
         {data.map((platform) => (
           <li
             key={platform.id}
             onClick={() => onSelectPlatform(platform)}
-            className="hover:bg-gray-200 rounded-lg px-4 cursor-pointer"
+            className="hover:bg-gray-200 rounded-lg py-2 px-4 cursor-pointer"
           >
             {platform.name}
           </li>
