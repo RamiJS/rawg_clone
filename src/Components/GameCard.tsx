@@ -1,6 +1,8 @@
 import { GameProps } from "../Hooks/useGames";
 import getCroppedImageUrl from "../services/image-url";
+import GameRating from "./GameRating";
 import PlatformList from "./PlatformList";
+
 interface Props {
   game: GameProps;
 }
@@ -30,7 +32,12 @@ const GameCard = ({ game }: Props) => {
             </p>
           )}
         </div>
-        <h1 className="text-white text-xl font-bold">{game.name}</h1>
+        <div className="flex flex-row items-center">
+          <h1 className="text-white text-xl font-bold">{game.name}</h1>
+          <span className="inline-block">
+            <GameRating rating={game.rating_top} />
+          </span>
+        </div>
       </div>
     </div>
   );
