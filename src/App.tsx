@@ -10,6 +10,7 @@ import SortSelector from "./Components/SortSelector";
 export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
+  sortOrder: string;
 }
 
 const App = () => {
@@ -35,7 +36,12 @@ const App = () => {
       {/* Main content */}
       <div className="col-span-12 lg:col-span-10 py-4 px-6">
         <div className="flex flex-row gap-3">
-          <SortSelector />
+          <SortSelector
+            sortOrder={gameQuery.sortOrder}
+            onSortSelect={(sortOrder) => {
+              setGameQuery({ ...gameQuery, sortOrder });
+            }}
+          />
           <PlatformSelector
             selectedPlatform={gameQuery.platform}
             onSelectPlatform={(platform) =>
