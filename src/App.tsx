@@ -11,6 +11,7 @@ export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
   sortOrder: string;
+  searchText: string;
 }
 
 const App = () => {
@@ -20,7 +21,9 @@ const App = () => {
     <div className="grid grid-cols-12 p-8">
       {/* Navbar */}
       <div className="col-span-12">
-        <Navbar />
+        <Navbar
+          onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })}
+        />
       </div>
 
       {/* Sidebar */}
