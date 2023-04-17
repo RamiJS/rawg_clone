@@ -2,6 +2,8 @@
 
 This is a clone of the popular video game discovery website, Rawg.io, built using ReactJS and TypeScript. The project includes generic hooks for fetching data, custom hooks for handling endpoints, and reusable components for building the user interface. The application allows users to search and filter games by genres and platforms, and it is fully responsive for optimal use on different devices.
 
+## [Live Website](https://rawg-clone-56ssr7nqu-techrami.vercel.app/)
+
 ## Features
 
 - Search for games: Users can search for games by typing in the search bar, and the results will be displayed in real-time.
