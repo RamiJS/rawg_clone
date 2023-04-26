@@ -1,6 +1,5 @@
 import { FiChevronDown } from "react-icons/fi";
-import usePlatforms from "../Hooks/usePlatforms";
-import { Platform } from "../Hooks/useGames";
+import usePlatforms, { Platform } from "../Hooks/usePlatforms";
 
 interface Props {
   onSelectPlatform: (platform: Platform) => void;

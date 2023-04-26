@@ -1,4 +1,3 @@
-import { Platform } from "../Hooks/useGames";
 import {
   BsPlaystation,
   BsXbox,
@@ -12,6 +11,7 @@ import { FiMonitor } from "react-icons/fi";
 import { FaLinux } from "react-icons/fa";
 import { SiSega } from "react-icons/si";
 import { IconType } from "react-icons/lib";
+import { Platform } from "../Hooks/usePlatforms";
 
 interface Props {
   platforms: Platform[];

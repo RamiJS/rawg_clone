@@ -4,8 +4,8 @@ import { Navbar } from "./Components/Navbar";
 import Sidebar from "./Components/Sidebar";
 import { Genre } from "./Hooks/useGenres";
 import PlatformSelector from "./Components/PlatformSelector";
-import { Platform } from "./Hooks/useGames";
 import SortSelector from "./Components/SortSelector";
+import { Platform } from "./Hooks/usePlatforms";
 
 export interface GameQuery {
   genre: Genre | null;
