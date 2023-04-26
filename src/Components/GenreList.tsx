@@ -9,7 +9,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
   const { data, error, isLoading } = useGenres();
   return (
     <>
-      {error && <p>{error}</p>}
+      {/* {error && <p>{error}</p>} */}
       {isLoading && (
         <div
           role="status"
@@ -35,7 +35,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
         </div>
       )}
       <ul className="">
-        {data.map((genre) => (
+        {data?.results.map((genre) => (
           <li
             onClick={() => onSelectGenre(genre)}
             key={genre.id}
