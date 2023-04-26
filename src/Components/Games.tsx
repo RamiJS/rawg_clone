@@ -1,3 +1,4 @@
+import React from "react";
 import { GameQuery } from "../App";
 import useGames from "../Hooks/useGames";
 import GameCard from "./GameCard";
@@ -8,7 +9,11 @@ interface Props {
 }
 
 const Games = ({ gameQuery }: Props) => {
-  const { data, error, isLoading } = useGames(gameQuery);
+  const pageSize = 9;
+  const { data, error, isLoading, fetchNextPage } = useGames(
+    gameQuery,
+    pageSize
+  );
   const shrimmerLoading = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   return (
     <>
@@ -19,9 +24,17 @@ const Games = ({ gameQuery }: Props) => {
             <GameCardShrimming key={shrimmer} />
           ))}
         {error && <p>{error.message}</p>}
-        {data?.results.map((game) => (
-          <GameCard key={game.id} game={game}></GameCard>
+        {data?.pages.map((page, index) => (
+          <React.Fragment key={index}>
+            {page?.results.map((game) => (
+              <GameCard key={game.id} game={game}></GameCard>
+            ))}
+          </React.Fragment>
         ))}
+
+        <button className="btn" onClick={() => fetchNextPage()}>
+          Load more
+        </button>
       </div>
     </>
   );
