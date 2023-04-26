@@ -31,7 +31,7 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
         <li className="text-gray-400 pointer-events-none py-2 px-4">
           Platforms
         </li>
-        {data.map((platform) => (
+        {data?.results.map((platform) => (
           <li
             key={platform.id}
             onClick={() => onSelectPlatform(platform)}
