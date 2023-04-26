@@ -28,6 +28,7 @@ useInfiniteQuery<FetchResponse<GameProps>, Error>({
     page_size: pageSize
     }
   }),
+  staleTime: 24 * 60 * 60 * 1000,
   getNextPageParam: (lastPage, allPages) => {
     return lastPage.next ? allPages.length + 1 : undefined
   }

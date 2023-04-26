@@ -1,4 +1,5 @@
 import React from "react";
+import InfiniteScroll from "react-infinite-scroll-component";
 import { GameQuery } from "../App";
 import useGames from "../Hooks/useGames";
 import GameCard from "./GameCard";
@@ -10,13 +11,21 @@ interface Props {
 
 const Games = ({ gameQuery }: Props) => {
   const pageSize = 9;
-  const { data, error, isLoading, fetchNextPage } = useGames(
+  const { data, error, isLoading, fetchNextPage, hasNextPage } = useGames(
     gameQuery,
     pageSize
   );
+
+  const fetchedGamesCount =
+    data?.pages.reduce((acc, page) => acc + page.results.length, 0) || 0;
   const shrimmerLoading = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   return (
-    <>
+    <InfiniteScroll
+      dataLength={fetchedGamesCount}
+      hasMore={!!hasNextPage}
+      next={() => fetchNextPage()}
+      loader={<p>loading.11..</p>}
+    >
       {error && <p>{error.message}</p>}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5">
         {isLoading &&
@@ -31,12 +40,11 @@ const Games = ({ gameQuery }: Props) => {
             ))}
           </React.Fragment>
         ))}
-
-        <button className="btn" onClick={() => fetchNextPage()}>
+        {/* <button className="btn" onClick={() => fetchNextPage()}>
           Load more
-        </button>
+        </button> */}
       </div>
-    </>
+    </InfiniteScroll>
   );
 };
 
