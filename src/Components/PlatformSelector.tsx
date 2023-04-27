@@ -3,11 +3,14 @@ import usePlatforms, { Platform } from "../Hooks/usePlatforms";
 
 interface Props {
   onSelectPlatform: (platform: Platform) => void;
-  selectedPlatform: Platform | null;
+  selectedPlatformId?: number;
 }
 
-const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
+const PlatformSelector = ({ onSelectPlatform, selectedPlatformId }: Props) => {
   const { data, error } = usePlatforms();
+  const selectedPlatform = data?.results.find(
+    (p) => p.id === selectedPlatformId
+  );
   if (error) return null;
   return (
     <div className="w-36 my-6 dropdown dropdown-bottom">
@@ -15,8 +18,8 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
         tabIndex={0}
         className="btn bg-selector border-none capitalize flex flex-row justify-between"
       >
-        {selectedPlatform ? (
-          <span>{selectedPlatform.name}</span>
+        {selectedPlatformId ? (
+          <span>{selectedPlatform?.name}</span>
         ) : (
           <span>Platforms</span>
         )}

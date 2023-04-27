@@ -1,11 +1,11 @@
 import useGenres, { Genre } from "../Hooks/useGenres";
 
 interface Props {
-  selectedGenre: Genre | null;
+  selectedGenreId?: number;
   onSelectGenre: (genre: Genre) => void;
 }
 
-const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
+const GenreList = ({ onSelectGenre, selectedGenreId }: Props) => {
   const { data, error, isLoading } = useGenres();
   return (
     <>
@@ -40,7 +40,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
             onClick={() => onSelectGenre(genre)}
             key={genre.id}
             className={`flex flex-row gap-2 py-2 items-center cursor-pointer transition-text duration-300 ${
-              selectedGenre?.id === genre.id ? "font-black text-lg" : ""
+              selectedGenreId === genre.id ? "font-black text-lg" : ""
             }`}
           >
             <img

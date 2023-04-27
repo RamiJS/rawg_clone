@@ -8,8 +8,8 @@ import SortSelector from "./Components/SortSelector";
 import { Platform } from "./Hooks/usePlatforms";
 
 export interface GameQuery {
-  genre: Genre | null;
-  platform: Platform | null;
+  genreId?: number;
+  platformId?: number;
   sortOrder: string;
   searchText: string;
 }
@@ -29,9 +29,9 @@ const App = () => {
       {/* Sidebar */}
       <div className="col-span-2 py-4 lg:block hidden">
         <Sidebar
-          selectedGenre={gameQuery.genre}
+          selectedGenreId={gameQuery.genreId}
           onSelectGenre={(genre: Genre) =>
-            setGameQuery({ ...gameQuery, genre })
+            setGameQuery({ ...gameQuery, genreId: genre.id })
           }
         />
       </div>
@@ -46,9 +46,9 @@ const App = () => {
             }}
           />
           <PlatformSelector
-            selectedPlatform={gameQuery.platform}
+            selectedPlatformId={gameQuery.platformId}
             onSelectPlatform={(platform) =>
-              setGameQuery({ ...gameQuery, platform })
+              setGameQuery({ ...gameQuery, platformId: platform.id })
             }
           />
         </div>
