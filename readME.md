@@ -17,7 +17,7 @@ This is a clone of the popular video game discovery website, Rawg.io, built usin
 
 - ReactJS - A popular JavaScript library for building user interfaces.
 - TypeScript - A statically-typed superset of JavaScript that adds optional type annotations.
-- CSS - Cascading Style Sheets for styling the components.
+- TailwindCSS - TailwindCSS for styling the components.
 - Rawg.io API - A free API for retrieving video game data, including game details, screenshots, and more.
 - React Router - A declarative routing library for React.
 - Zustand - A small, fast state management library for React.
