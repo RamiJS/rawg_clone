@@ -18,7 +18,10 @@ const GameCard = ({ game }: Props) => {
       <div className="flex flex-col gap-4 p-4">
         <div className="flex flex-row justify-between">
           <PlatformList
-            platforms={game.parent_platforms.map((p) => p.platform)}
+            platforms={
+              game.parent_platforms &&
+              game.parent_platforms.map((p) => p.platform)
+            }
           />
           {game.metacritic && (
             <p

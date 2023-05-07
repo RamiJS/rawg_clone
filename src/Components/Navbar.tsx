@@ -1,10 +1,6 @@
 import Searchbar from "./Searchbar";
 
-interface Props {
-  onSearch: (search: string) => void;
-}
-
-export const Navbar = ({ onSearch }: Props) => {
+export const Navbar = () => {
   return (
     <nav className="w-full flex flex-row justify-between gap-8">
       <div className="flex flex-row items-center gap-8">
@@ -12,7 +8,7 @@ export const Navbar = ({ onSearch }: Props) => {
           RAWG
         </a>
       </div>
-      <Searchbar onSearch={onSearch} />
+      <Searchbar />
       <div></div>
     </nav>
   );

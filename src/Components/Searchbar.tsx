@@ -1,17 +1,15 @@
 import { useRef } from "react";
 import { RiSearch2Line } from "react-icons/ri";
+import useGameQueryStore from "../store/GameQuery";
 
-interface Props {
-  onSearch: (search: string) => void;
-}
-
-const Searchbar = ({ onSearch }: Props) => {
+const Searchbar = () => {
   const ref = useRef<HTMLInputElement>(null);
+  const setSearchText = useGameQueryStore((s) => s.setSearchText);
   return (
     <form
       onSubmit={(event) => {
         event.preventDefault();
-        if (ref.current) onSearch(ref.current.value);
+        if (ref.current) setSearchText(ref.current.value);
       }}
     >
       <div className="w-full flex flex-row items-center justify-center py-3 bg-[#404040] text-white hover:text-gray-800 hover:bg-white transition duration-300  rounded-full">

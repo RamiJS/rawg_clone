@@ -1,9 +1,9 @@
-interface Props {
-  onSortSelect: (sort: string) => void;
-  sortOrder: string;
-}
+import useGameQueryStore from "../store/GameQuery";
 
-const SortSelector = ({ onSortSelect, sortOrder }: Props) => {
+const SortSelector = () => {
+  const sortOrder = useGameQueryStore((s) => s.gameQuery.sortOrder);
+  const onSortSelect = useGameQueryStore((s) => s.setSortOrder);
+
   const sortItems = [
     { label: "Relavince", value: "" },
     { label: "Date Added", value: "-added" },

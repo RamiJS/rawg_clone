@@ -1,12 +1,11 @@
 import { FiChevronDown } from "react-icons/fi";
 import usePlatforms, { Platform } from "../Hooks/usePlatforms";
+import useGameQueryStore from "../store/GameQuery";
 
-interface Props {
-  onSelectPlatform: (platform: Platform) => void;
-  selectedPlatformId?: number;
-}
+const PlatformSelector = () => {
+  const selectedPlatformId = useGameQueryStore((s) => s.gameQuery.platformId);
+  const onSelectPlatform = useGameQueryStore((s) => s.setPlatformId);
 
-const PlatformSelector = ({ onSelectPlatform, selectedPlatformId }: Props) => {
   const { data, error } = usePlatforms();
   const selectedPlatform = data?.results.find(
     (p) => p.id === selectedPlatformId
@@ -36,7 +35,7 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatformId }: Props) => {
         {data?.results.map((platform) => (
           <li
             key={platform.id}
-            onClick={() => onSelectPlatform(platform)}
+            onClick={() => onSelectPlatform(platform.id)}
             className="hover:bg-gray-200 rounded-lg py-2 px-4 cursor-pointer"
           >
             {platform.name}

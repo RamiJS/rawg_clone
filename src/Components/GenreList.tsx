@@ -1,12 +1,10 @@
 import useGenres, { Genre } from "../Hooks/useGenres";
+import GameQueryStore from "../store/GameQuery";
 
-interface Props {
-  selectedGenreId?: number;
-  onSelectGenre: (genre: Genre) => void;
-}
-
-const GenreList = ({ onSelectGenre, selectedGenreId }: Props) => {
+const GenreList = () => {
   const { data, error, isLoading } = useGenres();
+  const selectedGenreId = GameQueryStore((s) => s.gameQuery.genreId);
+  const setGenreId = GameQueryStore((s) => s.setGenreId);
   return (
     <>
       {/* {error && <p>{error}</p>} */}
@@ -37,7 +35,7 @@ const GenreList = ({ onSelectGenre, selectedGenreId }: Props) => {
       <ul className="">
         {data?.results.map((genre) => (
           <li
-            onClick={() => onSelectGenre(genre)}
+            onClick={() => setGenreId(genre.id)}
             key={genre.id}
             className={`flex flex-row gap-2 py-2 items-center cursor-pointer transition-text duration-300 ${
               selectedGenreId === genre.id ? "font-black text-lg" : ""
