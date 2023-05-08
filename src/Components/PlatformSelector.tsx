@@ -1,5 +1,6 @@
 import { FiChevronDown } from "react-icons/fi";
-import usePlatforms, { Platform } from "../Hooks/usePlatforms";
+import usePlatforms from "../Hooks/usePlatforms";
+import { Platform } from "../entities/Platform";
 import useGameQueryStore from "../store/GameQuery";
 
 const PlatformSelector = () => {

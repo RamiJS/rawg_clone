@@ -1,4 +1,5 @@
-import useGenres, { Genre } from "../Hooks/useGenres";
+import useGenres from "../Hooks/useGenres";
+import { Genre } from "../entities/Genre";
 import GameQueryStore from "../store/GameQuery";
 
 const GenreList = () => {

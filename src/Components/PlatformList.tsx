@@ -11,7 +11,7 @@ import { FiMonitor } from "react-icons/fi";
 import { FaLinux } from "react-icons/fa";
 import { SiSega } from "react-icons/si";
 import { IconType } from "react-icons/lib";
-import { Platform } from "../Hooks/usePlatforms";
+import { Platform } from "../entities/Platform";
 
 interface Props {
   platforms: Platform[];

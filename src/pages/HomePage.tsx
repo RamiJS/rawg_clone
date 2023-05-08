@@ -1,6 +1,5 @@
 import React from "react";
 import Games from "../Components/Games";
-import { Navbar } from "../Components/Navbar";
 import PlatformSelector from "../Components/PlatformSelector";
 import Sidebar from "../Components/Sidebar";
 import SortSelector from "../Components/SortSelector";
