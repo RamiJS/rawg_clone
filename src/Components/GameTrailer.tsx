@@ -18,7 +18,9 @@ const GameTrailer = ({ gameId }: Props) => {
       poster={firstItem.preview}
       controls
     ></video>
-  ) : null;
+  ) : (
+    <h1>trailer not available</h1>
+  );
 };
 
 export default GameTrailer;
