@@ -3,6 +3,7 @@ import { GameProps } from "../entities/GameProps";
 import getCroppedImageUrl from "../services/image-url";
 import GameRating from "./GameRating";
 import PlatformList from "./PlatformList";
+import GameMetaCritic from "./GameMetaCritic";
 
 interface Props {
   game: GameProps;
@@ -24,17 +25,7 @@ const GameCard = ({ game }: Props) => {
               game.parent_platforms.map((p) => p.platform)
             }
           />
-          {game.metacritic && (
-            <p
-              className={`px-[6px] py-[3px] font-bold rounded-md text-[12px] border ${
-                game.metacritic >= 90
-                  ? "text-green-400 border-green-400"
-                  : "text-yellow-400 border-yellow-400"
-              }`}
-            >
-              {game.metacritic}
-            </p>
-          )}
+          {game.metacritic && <GameMetaCritic score={game.metacritic} />}
         </div>
         <div className="flex flex-row items-center">
           <h1 className="text-white text-xl font-bold">
