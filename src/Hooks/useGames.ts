@@ -6,12 +6,14 @@ import useGameQueryStore from "../store/GameQuery";
 const apiClient = new APIClient<GameProps>('/games')
 
 export interface GameProps {
-    id: number; // id of the game
-    name: string; // name of the game
-    background_image: string; // background image of the game
-    parent_platforms: {platform: Platform}[]; // array of platforms
-    metacritic: number; // rating of the game
-    rating_top: number; // rating of the game
+    id: number;
+    name: string;
+    slug: string;
+    description_raw: string;
+    background_image: string;
+    parent_platforms: {platform: Platform}[];
+    metacritic: number;
+    rating_top: number;
 }
 
 const useGames = () => {

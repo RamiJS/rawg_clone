@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { GameProps } from "../Hooks/useGames";
 import getCroppedImageUrl from "../services/image-url";
 import GameRating from "./GameRating";
@@ -36,7 +37,9 @@ const GameCard = ({ game }: Props) => {
           )}
         </div>
         <div className="flex flex-row items-center">
-          <h1 className="text-white text-xl font-bold">{game.name}</h1>
+          <h1 className="text-white text-xl font-bold">
+            <Link to={`/games/${game.slug}`}>{game.name}</Link>
+          </h1>
           <span className="inline-block">
             <GameRating rating={game.rating_top} />
           </span>

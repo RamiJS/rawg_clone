@@ -7,12 +7,7 @@ import SortSelector from "../Components/SortSelector";
 
 const HomePage = () => {
   return (
-    <div className="grid grid-cols-12 p-8">
-      {/* Navbar */}
-      <div className="col-span-12">
-        <Navbar />
-      </div>
-
+    <div className="grid grid-cols-12">
       {/* Sidebar */}
       <div className="col-span-2 py-4 lg:block hidden">
         <Sidebar />
