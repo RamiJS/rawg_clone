@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { GameProps } from "../entities/GameProps";
+import GameProps from "../entities/GameProps";
 import getCroppedImageUrl from "../services/image-url";
 import GameRating from "./GameRating";
 import PlatformList from "./PlatformList";

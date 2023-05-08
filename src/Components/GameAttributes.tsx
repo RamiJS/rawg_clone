@@ -1,5 +1,5 @@
 import GameDetail from "./GameDetail";
-import { GameProps } from "../entities/GameProps";
+import GameProps from "../entities/GameProps";
 import GameMetaCritic from "./GameMetaCritic";
 
 interface Props {

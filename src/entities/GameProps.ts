@@ -1,8 +1,8 @@
-import { Genre } from "./Genre";
-import { Platform } from "./Platform";
-import { Publishers } from "./Publishers";
+import Genre from "./Genre";
+import Platform from "./Platform";
+import Publishers from "./Publishers";
 
-export interface GameProps {
+interface GameProps {
   id: number;
   name: string;
   slug: string;
@@ -14,3 +14,5 @@ export interface GameProps {
   metacritic: number;
   rating_top: number;
 }
+
+export default GameProps

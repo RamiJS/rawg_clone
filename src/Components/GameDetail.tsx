@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Platform } from "../entities/Platform";
+import Platform from "../entities/Platform";
 
 interface Details {
   title: string;

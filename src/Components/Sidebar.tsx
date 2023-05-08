@@ -1,4 +1,4 @@
-import { Genre } from "../entities/Genre";
+import Genre from "../entities/Genre";
 import GenreList from "./GenreList";
 
 const Sidebar = () => {
