@@ -42,13 +42,7 @@ You will need the following software installed on your local machine to run the 
 4. Create a `.env` file in the root of the project and add the following environment variables: `REACT_APP_RAWG_API_KEY=your_rawg_api_key`
 Replace `your_rawg_api_key` with your own Rawg.io API key. You can obtain an API key by signing up on the Rawg.io website: [https://rawg.io/apidocs](https://rawg.io/apidocs)
 5. Start the development server: `npm start` or `yarn start`
-
 6. Open your web browser and go to `http://localhost:3000` to view the application running locally.
-
-
-## License
-
-This project is open-source and available under the [MIT License](LICENSE).
 
 ## Acknowledgements
 
