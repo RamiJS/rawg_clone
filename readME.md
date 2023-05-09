@@ -4,7 +4,7 @@ This is a clone of the popular video game discovery website, Rawg.io, built usin
 
 ## Live Website
 
-[https://rawg-clone-56ssr7nqu-techrami.vercel.app/](https://rawg-clone-56ssr7nqu-techrami.vercel.app/)
+[https://rawg-clone-56ssr7nqu-techrami.vercel.app/](https://rawg-clone-wheat.vercel.app/)
 
 ## Features
 
